@@ -1,7 +1,7 @@
 /**
  * Descriptions: 请求跳转与参数解析器<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/12/13 14:29
  * @see https://www.w3cschool.cn/json/1koy1piy.html
  */
@@ -12,7 +12,7 @@ function JumperAndParser() {
      * Descriptions: 解析url参数 为JSON对象<p>
      *
      * new JumperAndParser().parseQueryString(window.location.href)
-     * @author SailHe
+     * @author Jin
      * @date 2018/12/13 14:29
      * @see https://blog.csdn.net/AinUser/article/details/78882492
      */
@@ -33,7 +33,7 @@ function JumperAndParser() {
     /**
      * Descriptions: 将参数JSON对象解析为BodyString<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/12/13 14:47
      */
     this.parserQueryJSON = function (paramsJSON) {
@@ -58,7 +58,7 @@ function JumperAndParser() {
      *
      * 可以跟参数对象
      * new JumperAndParser().jumperToTarget("topic.html", {})
-     * @author SailHe
+     * @author Jin
      * @date 2018/12/13 14:27
      */
     this.jumperToTarget = function (targetPage, paramsJSON) {
@@ -77,7 +77,7 @@ function JumperAndParser() {
 /**
  * Descriptions: ajax请求结果判断闭包<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/12/13 15:20
  */
 function callbackClosure(successFun, failureFun, tipsMessagePrefix) {
@@ -105,7 +105,7 @@ function callbackClosure(successFun, failureFun, tipsMessagePrefix) {
 /**
  * Descriptions: 初始化一个论坛页面 当然, 标记什么的得相同<p>
  *  若editor未定义或者为null 则不会初始化KindEditor(富文本编辑器)
- * @author SailHe
+ * @author Jin
  * @date 2019/1/1 18:05
  */
 function initPage(editor) {
@@ -170,7 +170,7 @@ function initPage(editor) {
     /**
      * Descriptions: 返回一个居中显示的div Dom<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2019/1/1 20:02
      */
     const divWrap = (data, customClass = "") => {

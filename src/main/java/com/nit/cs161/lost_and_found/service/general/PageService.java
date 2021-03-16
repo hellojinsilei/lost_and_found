@@ -18,7 +18,7 @@ public interface PageService<DTO, PrimaryKey> extends CrudService<DTO, PrimaryKe
      * @param dtRequestDTO 页面请求对象
      * @return 返回页面响应对象
      * @throws Exception 数据库日常
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/27 15:05
      */
     DtResponseDTO getPageResponse(DtRequestDTO dtRequestDTO) throws Exception;

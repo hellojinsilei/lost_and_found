@@ -48,7 +48,7 @@ public class SecureHashStandard {
     /**
      * Descriptions: 计算并返回字符串使用SHA后的字串<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2019/1/7 18:07
      */
     public String calcHashValue(final String hashKeyStr) {

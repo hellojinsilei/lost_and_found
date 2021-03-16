@@ -12,21 +12,21 @@ public enum EnumSearchType {
     /**
      * Descriptions: 来自左手边(left hands side)的下拉框的搜索<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/5/10 19:24
      */
     LHS_SEARCH("左手边的下拉菜单"),
     /**
      * Descriptions: 来自右手边的下拉框的搜索<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/5/10 19:24
      */
     RHS_SEARCH("右手边的下拉菜单"),
     /**
      * Descriptions: 来自搜索框的模糊搜索<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/5/10 19:24
      */
     FUZZY_SEARCH("模糊搜索框"), SPECIAL_SEARCH("需要特殊处理的"), RELOAD("与重载等价的搜索");

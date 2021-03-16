@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Descriptions: 持久层<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/6 13:50
  */
 @Repository
@@ -19,7 +19,7 @@ public interface MessageRepository extends JpaRepository<LafMessage, Integer>, J
     /**
      * Descriptions: 查询该物品所有的消息<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/6 21:40
      */
     List<LafMessage> findAllByItemId(Integer itemId);

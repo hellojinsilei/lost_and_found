@@ -4,7 +4,7 @@ package com.nit.cs161.lost_and_found.constant;
  * Descriptions: 推广平台枚举<p>
  * PS: 订单的origin, 活动的platform等字段都用此枚举
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/7/25 10:20
  */
 public enum EnumPlatform {

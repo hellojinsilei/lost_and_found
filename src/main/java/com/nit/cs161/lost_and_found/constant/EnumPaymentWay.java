@@ -3,7 +3,7 @@ package com.nit.cs161.lost_and_found.constant;
 /**
  * Descriptions: 支付方式枚举<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/7/25 10:20
  */
 public enum EnumPaymentWay {

@@ -14,7 +14,7 @@ public interface CrudService<DTO, PrimaryKey> {
      * @param primaryKey 记录主键编号
      * @return 返回主键对应的传输对象
      * @throws Exception 数据库日常
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/27 15:05
      */
     DTO getRecord(PrimaryKey primaryKey) throws Exception;
@@ -25,7 +25,7 @@ public interface CrudService<DTO, PrimaryKey> {
      * @param primaryKey 记录主键编号
      * @return 删除记录条数
      * @throws Exception 数据库日常
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/27 21:16
      */
     Integer deleteRecord(PrimaryKey primaryKey) throws Exception;
@@ -36,7 +36,7 @@ public interface CrudService<DTO, PrimaryKey> {
      * @param record 记录示例
      * @return 更新记录条数
      * @throws Exception 数据库日常
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 14:32
      */
     Integer updateRecord(DTO record) throws Exception;
@@ -47,7 +47,7 @@ public interface CrudService<DTO, PrimaryKey> {
      * @param record 记录示例
      * @return PrimaryKey.class
      * @throws Exception 数据库日常
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/27 15:52
      */
     PrimaryKey saveRecord(DTO record) throws Exception;
@@ -58,7 +58,7 @@ public interface CrudService<DTO, PrimaryKey> {
      * @param record 记录示例
      * @return PrimaryKey.class
      * @throws Exception 数据库日常
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/27 15:52
      */
     PrimaryKey insertRecord(DTO record) throws Exception;

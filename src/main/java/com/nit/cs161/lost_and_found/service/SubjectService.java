@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Descriptions: 业务逻辑<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/1 15:43
  */
 public interface SubjectService extends PageService<MessageDTO, Integer> {
@@ -43,7 +43,7 @@ public interface SubjectService extends PageService<MessageDTO, Integer> {
     /**
      * Descriptions: 列举所有的主题类型<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/9 20:55
      */
     List<SubjectType> listSubjectType();
@@ -51,7 +51,7 @@ public interface SubjectService extends PageService<MessageDTO, Integer> {
     /**
      * Descriptions: 依据传入消息主键返回该消息对应主题的消息列表<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/12/13 16:34
      */
     List<MessageDTO> listSubjectMessage(Integer messageId) throws Exception;
@@ -59,7 +59,7 @@ public interface SubjectService extends PageService<MessageDTO, Integer> {
     /**
      * Descriptions: 保存一个主题 或是保存一个普通消息<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/9 21:04
      */
     Integer saveRecord(MessageDTO record, ItemDTO itemRecord) throws Exception;
@@ -67,7 +67,7 @@ public interface SubjectService extends PageService<MessageDTO, Integer> {
     /**
      * Descriptions: 更新一个主题 或是一个普通消息<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2019/1/6 10:44
      */
     Integer updateRecord(MessageDTO record, ItemDTO itemRecord) throws Exception;

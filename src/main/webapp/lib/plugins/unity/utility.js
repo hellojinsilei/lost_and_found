@@ -1,7 +1,7 @@
 /**
  * Descriptions: 属性原型定义<p>
  * @param volume, taste || jsonString || {volume, taste}
- * @author SailHe
+ * @author Jin
  * @date 2018/7/23 19:41
  */
 function GoodsSkuAttr() {
@@ -82,7 +82,7 @@ var enumCategoryGrade = {
  * Descriptions: 动态下拉框的success闭包构造函数<p>
  *
  * @param eventParam requestSuccessfulEvent(请求成功)事件的参数
- * @author SailHe
+ * @author Jin
  * @date 2018/5/8 19:47
  */
 function dynamicSuccessClosure($dropdownAble, iterativeProcessingFun, eventParam) {
@@ -102,7 +102,7 @@ function dynamicSuccessClosure($dropdownAble, iterativeProcessingFun, eventParam
  * @param $dropdownAble jQuery对象 其绑定的是一个可下拉的元素(比如select菜单)
  * @param gradeName 向后端请求的参数值 即类别级别名
  * @param iterativeProcessingFun($dropdownAble, dataDTO)
- * @author SailHe
+ * @author Jin
  * @date 2018/4/16 9:38
  */
 function dynamicLoadClassification($dropdownAble, gradeName, iterativeProcessingFun) {
@@ -133,7 +133,7 @@ $.fn.dynamicLoadPromotionType = function (appendFun, eventParam) {
  *     @TODO 缓存
  *
  * @param $DataTableAPI
- * @author SailHe
+ * @author Jin
  * @date 2018/4/15 10:11
  */
 function loadDropdownMenu($DataTableAPI, customSearcher) {
@@ -162,7 +162,7 @@ function loadDropdownMenu($DataTableAPI, customSearcher) {
 /**
  * Descriptions: 加载[分类]下拉选项框 请求成功后会选中与selectedValue相等的选项<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/7/29 12:05
  */
 function loadDropSelect($select, gradeName, selectedValue) {
@@ -180,7 +180,7 @@ function loadDropSelect($select, gradeName, selectedValue) {
  * @param reloadTable 需要重载的表格
  * @param tipsMessagePrefix 提示消息前缀(默认是'操作')
  * @return 一个提示回调函数闭包 该函数会在服务器返回的result.success为真时提示成功 并触发表格的重载事件
- * @author SailHe
+ * @author Jin
  * @date 2018/4/22 10:32
  */
 function tipsCallbackClosure(reloadTable, tipsMessagePrefix, $informationModal, ajaxReload = true) {
@@ -211,7 +211,7 @@ function tipsCallbackClosure(reloadTable, tipsMessagePrefix, $informationModal, 
  *
  * @PS: 可用于解决不能重复提交的问题
  * @eg: $informationModal.find('form').resetForm();
- * @author SailHe
+ * @author Jin
  * @date 2018/7/28 21:11
  */
 $.fn.resetFormValidCheck = function () {
@@ -222,7 +222,7 @@ $.fn.resetFormValidCheck = function () {
  * Descriptions: 清除模态框内所有表格的所有内容(jQuery选择器版) 下拉框需要empty()<p>
  *
  * @eg: $informationModal.find('form').clearForm();
- * @author SailHe
+ * @author Jin
  * @date 2018/7/27 22:14
  */
 $.fn.clearForm = function () {
@@ -236,7 +236,7 @@ $.fn.clearForm = function () {
 /**
  * Descriptions: 范围日历选择器<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/5/6 21:06
  */
 function datetimePicker(startDateTextBox, endDateTextBox, endSelectCallback) {
@@ -295,7 +295,7 @@ function datetimePicker(startDateTextBox, endDateTextBox, endSelectCallback) {
 /**
  * Descriptions: 若value不为undefine那么返回与其值相等的选项 否则 返回被选中的select选项 <p>
  * 若要获取select的值$('select[name=selectID]').val() 这样即可
- * @author SailHe
+ * @author Jin
  * @date 2018/5/8 14:26
  */
 $.fn.getSelectOption = function (value) {
@@ -320,7 +320,7 @@ $.fn.getSelectOption = function (value) {
 /**
  * Descriptions: 找到select框的所有选项中 与传入value相等的option 并选中; 如果没找到那么将其置为''若有''选项会选中''<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/4/22 20:27
  */
 $.fn.setSelectOption = function (value) {
@@ -345,7 +345,7 @@ $.fn.setSelectOption = function (value) {
 /**
  * Descriptions: 判断[选择器中所有的]type为checkbox的input是否被选中<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/7/28 18:54
  */
 $.fn.isChecked = function () {
@@ -363,7 +363,7 @@ $.fn.isChecked = function () {
 /**
  * Descriptions: 返回[选择器中所有的]type为checkbox且被选中的input的jQuery对象<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/7/28 19:09
  */
 $.fn.checked$Obj = function () {
@@ -375,7 +375,7 @@ $.fn.checked$Obj = function () {
  *
  * @param enumState: bool
  * @return {newChecked: number, oldChecked: number} 最终被选中的checkbox的个数的情况 并触发相应事件
- * @author SailHe
+ * @author Jin
  * @date 2018/7/28 19:09
  */
 $.fn.setCheckboxAll = function (enumState) {
@@ -403,7 +403,7 @@ $.fn.setCheckboxAll = function (enumState) {
 /**
  * Descriptions: 改变选择器选择的input框的部分属性<p>
  * EG: $('input[name=inputName]').changeInputRadio(0, true, false); 表示将名字为inputName的input=元素的第一个 选中并将其置为可改变(可输入)的
- * @author SailHe
+ * @author Jin
  * @date 2018/5/7 21:14
  */
 $.fn.changeInputRadio = function (num, selectIt, disabled) {
@@ -424,7 +424,7 @@ $.fn.changeInputRadio = function (num, selectIt, disabled) {
 /**
  * Descriptions: 获取被第一个选中的input(包括Radio, checkbox等)的{index, value}<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/8/27 11:57
  */
 $.fn.getFirstCheckedInput = function () {
@@ -443,7 +443,7 @@ $.fn.getFirstCheckedInput = function () {
 /**
  * Descriptions: Dom显示 + 子:input有效 (确保可提交)<p>
  * 注意: display =  ''; 可能会引起一些错误, 此时建议手写已应对特定的情况 而不是直接调用此封装API
- * @author SailHe
+ * @author Jin
  * @date 2018/5/8 16:05
  */
 $.fn.domDisplaySubValid = function () {
@@ -454,7 +454,7 @@ $.fn.domDisplaySubValid = function () {
 /**
  * Descriptions: Dom隐藏 + 子:input无效(无效=只读+不提交); 并不会移除其它潜在的冲突属性<p>
  * 隐藏了选择器选择的元素在内的所有元素以及其子元素, 并将其子:input元素都置为无效
- * @author SailHe
+ * @author Jin
  * @date 2018/5/8 16:05
  */
 $.fn.domHideSubInvalid = function () {
@@ -466,7 +466,7 @@ $.fn.domHideSubInvalid = function () {
 /**
  * Descriptions: Dom隐藏 + 子:input只读; 并不会移除其它冲突属性<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/9/30 19:06
  */
 $.fn.domHideSubReadonly = function () {
@@ -478,7 +478,7 @@ $.fn.domHideSubReadonly = function () {
 /**
  * Descriptions: 删除table中的一行<p>
  * jQuery选择的必须是一行(是一个<tr></tr>的子元素 即被其包裹)中的一个或多个元素
- * @author SailHe
+ * @author Jin
  * @return 被删除之前的那行
  * @date 2018/5/28 19:14
  */
@@ -496,7 +496,7 @@ $.fn.deleteTableRow = function () {
  * 注意: 若内部有input的话 该值仅仅与第一个input的value有关; img会返回src而不是value
  * @param colNum 列号
  * @param filterFun($cell, $row) 过滤方法
- * @author SailHe
+ * @author Jin
  * @return any[] 包含了该列特定值的Array 如果不指定filterFun 默认获取所有值 否则获取返回值为true的cell的值
  * @date 2018/5/7 19:23
  */
@@ -532,7 +532,7 @@ $.fn.getTableColValue = function (colNum, filterFun) {
  * Descriptions: 为一个表格的行元素添加删除线 选择器是任意cell
  *
  * @see http://www.cnblogs.com/zhouhongyu1989/p/3944847.html<p>
- * @author SailHe
+ * @author Jin
  * @date 2018/5/28 20:38
  */
 $.fn.tableRowDeleteLine = function () {
@@ -553,7 +553,7 @@ $.fn.tableRowDeleteLine = function () {
 /**
  * Descriptions: 移除表格中任意元素对应的的行删除线 选择器是任意cell<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/5/28 21:14
  */
 $.fn.tableRowDeleteLineRemove = function () {
@@ -563,7 +563,7 @@ $.fn.tableRowDeleteLineRemove = function () {
 /**
  * Descriptions: 返回一个无意义的id字符串<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/9/11 16:50
  */
 function identification(tipStr = '__') {
@@ -575,7 +575,7 @@ function identification(tipStr = '__') {
  * Descriptions: 自定义消息框(可显示多个 不会覆盖)
  * @param content: 内容
  * @param type: alert 警告, else 提示
- * @author SailHe
+ * @author Jin
  * @date 2018/4/8 21:56
  */
 $.messageBox = function (content, type) {
@@ -610,7 +610,7 @@ $.messageBox = function (content, type) {
 /**
  * Descriptions: DataTable的删除行请求闭包生成函数 delete接口参数名必须叫做primaryKey<p>
  * @param dataTableApi deleteUrl
- * @author SailHe
+ * @author Jin
  * @date 2018/5/8 19:26
  */
 deleteRowClosure = function (dataTableApi, deleteUrl, customTips = "") {
@@ -651,7 +651,7 @@ deleteRowClosure = function (dataTableApi, deleteUrl, customTips = "") {
  *
  * 已有的一些常用原型名: Dom; jQuery; String; Map; Set 其它对象返回else
  * ps: typeof 'str' -> "string"; 'str' instanceof String(string或'string'异常) -> false
- * @author SailHe
+ * @author Jin
  * @date 2018/5/8 18:46
  */
 function instanceOf(obj) {
@@ -668,7 +668,7 @@ function instanceOf(obj) {
  * Descriptions: 判断value是否是一个'有效'的js对象<p>
  *
  * @return boolean 若value是一个已定义不为空的值返回true
- * @author SailHe
+ * @author Jin
  * @date 2018/7/29 17:04
  */
 function isValidObj(value) {
@@ -679,7 +679,7 @@ function isValidObj(value) {
  * Descriptions: 判断value是否是一个'有效'的js变量<p>
  *
  * @return boolean 若value是一个已定义不为空的值返回true (obj的null; string的''; number的NaN; 以及undefined视为空)
- * @author SailHe
+ * @author Jin
  * @date 2018/7/30 21:42
  */
 function isValidVar(value) {
@@ -693,7 +693,7 @@ function isValidVar(value) {
 /**
  * Descriptions: 若已过期 返回true<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/5/9 20:21
  */
 function isTimeOut(endTime) {
@@ -705,7 +705,7 @@ function isTimeOut(endTime) {
 /**
  * Descriptions: 以传入的一个规则间隔的字符串 构造一个Array  实验方法<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/5/10 10:17
  */
 function structureArray(ruleStr, interval) {
@@ -727,7 +727,7 @@ function debugLog(message) {
  *
  * @return boolean 若之前没有被添加返回true(即这次添加了缓存)
  * @param refresh true表示强制刷新缓存 否则在有缓存的情况下不更新
- * @author SailHe
+ * @author Jin
  * @date 2018/7/29 21:36
  */
 function bufferUpdate(bufferMap, key, value, refresh) {
@@ -751,7 +751,7 @@ function bufferUpdate(bufferMap, key, value, refresh) {
  * 若key是一个字符串, 对于valueArray中的每一个元素, 都应包含key属性, 这个属性作为索引
  * 否则key作为索引<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/8/27 17:15
  */
 function bufferUpdateArray(bufferMap, key, valueArray, refresh) {
@@ -772,7 +772,7 @@ function bufferUpdateArray(bufferMap, key, valueArray, refresh) {
  * Descriptions: 查重缓存<p>
  *
  * @return boolean 重复返回true 不存在返回false
- * @author SailHe
+ * @author Jin
  * @date 2018/8/2 20:29
  */
 function duplicateChecking(bufferMap, key) {
@@ -790,7 +790,7 @@ function duplicateChecking(bufferMap, key) {
 /**
  * Descriptions: 删除查重<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/8/2 20:35
  */
 function duplicateCheckingDelete(bufferMap, key) {
@@ -816,7 +816,7 @@ function integerMultiplication(lhs, rhs) {
  *
  * mlj这种引入貌似每次切换页面时js下面的变量都会重新申明一遍
  * @return number
- * @author SailHe
+ * @author Jin
  * @date 2018/9/29 21:14
  */
 function nStrPlush(lhs, rhs) {
@@ -847,7 +847,7 @@ function nStrPlush(lhs, rhs) {
                 },
             });
         }
- * @author SailHe
+ * @author Jin
  * @date 2018/7/31 15:40
  */
 function AsyncLinkBufferChangeFactory(
@@ -1018,7 +1018,7 @@ function calcDiffDay(startDate, endDate) {
  * Descriptions: 计算这个日期的下一个日期(天数+dis)<p>
  *
  * @see https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Numbers_and_dates#Date%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95
- * @author SailHe
+ * @author Jin
  * @return 下一个日期对象(原对象不变)
  * @date 2019/6/5 22:56
  */
@@ -1063,7 +1063,7 @@ Date.prototype.format = function (fmt) {
 /**
  * Descriptions: 初始化一个固定格式化的jQUI时间选择输入框<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/6 10:00
  */
 $.fn.initDatePicker = function () {
@@ -1076,7 +1076,7 @@ $.fn.initDatePicker = function () {
 /**
  * Descriptions: 在给定范围内初始化一个时间选择器 [left, right] 注意此处是左闭右闭的<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2019/6/5 22:48
  */
 $.fn.initDatePickerBetween = function (left, right) {
@@ -1113,7 +1113,7 @@ $.fn.initDateTimePickerBetween = function (left, right) {
 /**
  * Descriptions: 范围日期<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/7 18:04
  */
 $.fn.rangeDatePicker = function ($endDatePickerInput) {
@@ -1210,7 +1210,7 @@ $.fn.rangeDateTimePicker = function ($endDatePickerInput) {
  * 注意: 参数未经任何处理
  * @param colNum 列号
  * @param iteratorFun($cell, $row)
- * @author SailHe
+ * @author Jin
  * @return $(this)
  * @date 2018/9/11 18:30
  */
@@ -1233,7 +1233,7 @@ $.fn.iterateTableCol = function (colNum, iteratorFun) {
  * Descriptions: 左开右闭<p>
  * Left open and right closed
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/9/12 12:44
  */
 function betweenNumLORC(min, num, max) {
@@ -1244,7 +1244,7 @@ function betweenNumLORC(min, num, max) {
  * Descriptions: 初始化一个可拖拽的Bootstrap Modal 许引入jQ-ui<p>
  *
  * @TODO 某些情况下右侧会出现滚动条
- * @author SailHe
+ * @author Jin
  * @date 2018/9/12 11:21
  */
 const initDraggableModal = ($button, $modal, modalTitle) => {
@@ -1302,7 +1302,7 @@ const initDraggableModal = ($button, $modal, modalTitle) => {
 /**
  * Descriptions: 绑定回车提交事件<p>
  * trigger是对应Dom下面的按键事件, linker是自定义jQuery选择器所选择的元素, 动作是对其触发指定的事件
- * @author SailHe
+ * @author Jin
  * @date 2018/9/30 21:39
  */
 $.fn.keyPressEventBinding = function (linkerSelector, keyCode = 13, linkerEventName = 'click') {

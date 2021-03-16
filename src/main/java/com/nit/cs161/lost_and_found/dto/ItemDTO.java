@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * Descriptions: 物品传输类<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/6 13:32
  */
 public class ItemDTO extends BaseDTO<LafItem> {

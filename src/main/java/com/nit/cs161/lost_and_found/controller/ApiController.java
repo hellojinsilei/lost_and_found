@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * Descriptions: API控制<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/1 15:42
  */
 @RestController
@@ -37,7 +37,7 @@ public class ApiController {
     /**
      * Descriptions: 返回菜单<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 18:58
      */
     @RequestMapping(value = "menu/listMenu")
@@ -58,7 +58,7 @@ public class ApiController {
     /**
      * Descriptions: 文件上传接口<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2019/1/3 18:38
      */
     @RequestMapping(value = "file/upload")

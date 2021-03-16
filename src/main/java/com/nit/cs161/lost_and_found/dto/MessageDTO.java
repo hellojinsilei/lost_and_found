@@ -7,7 +7,7 @@ import org.springframework.beans.BeanUtils;
 /**
  * Descriptions: 消息传输类<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/6 22:46
  */
 public class MessageDTO extends BaseDTO<LafMessage> {
@@ -16,7 +16,7 @@ public class MessageDTO extends BaseDTO<LafMessage> {
     /**
      * Descriptions: 由于前端使用的username 此处用于传参<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/12/16 15:20
      */
     private String userUsername;

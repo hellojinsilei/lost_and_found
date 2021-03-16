@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Descriptions: hibernate query language生成器<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/4/9 14:30
  */
 public final class HqlGenerator {
@@ -21,7 +21,7 @@ public final class HqlGenerator {
     /**
      * Descriptions: 若是数字返回true<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/9 18:15
      */
     static Boolean isNumeric(Object AObject) {
@@ -35,7 +35,7 @@ public final class HqlGenerator {
     /**
      * Descriptions: 如果参数的类型是Integer那么直接返回对应字符串 否则在外面加一个"" 若是Data会返回格式话的字符串<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/9 15:37
      */
     static String hqlString(Object value) {
@@ -48,7 +48,7 @@ public final class HqlGenerator {
     /**
      * Descriptions: 将Class转为对应的包名<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/23 20:45
      */
     public static String getPackageName(Class cls) {
@@ -58,7 +58,7 @@ public final class HqlGenerator {
     /**
      * Descriptions: 拼接筛选条件<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/23 20:50
      */
     public static String getFilterCondition(Map<String, Object> filterFields){
@@ -80,7 +80,7 @@ public final class HqlGenerator {
     /**
      * Descriptions: 返回该对象的过滤器(所有非空的字段都将作为筛选字段)<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/23 21:03
      */
     public static Map<String, Object> getFilter(EntityExistent objDTO) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -108,7 +108,7 @@ public final class HqlGenerator {
      *
      * @param filterFields 用于数据库查询时的筛选字段以及其值
      * @return 由objDTO的非空字段组成的 hql更新语句
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/9 13:54
      */
     public static String upgrade(EntityExistent newObjDTO, Map<String, Object> filterFields) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -153,7 +153,7 @@ public final class HqlGenerator {
     /**
      * Descriptions: 生成hql查询语句 该语句返回相应的DTO(必须有DTO的Bean构造器)<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/23 20:34
      */
     public static String query(EntityExistent objDTO, Map<String, Object> filterFields) {
@@ -166,7 +166,7 @@ public final class HqlGenerator {
     /**
      * Descriptions: 测试阶段 返回以示例非空字段为筛选器的hql查询语句<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/23 21:21
      */
     public static String query(EntityExistent objDTO) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException {

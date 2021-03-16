@@ -4,8 +4,8 @@
  * 可以包含数字 [0-9]
  * 可以包含下划线 [ _ ] 和减号 [ - ]<p>
  *
- * @author SailHe
- * @date 2018/9/10 20:39
+ * @author Jin
+ * @date 2020/3/15
  */
 const PATTERN_PASSWORD = /^[\w_-]{6,16}$/;
 // 字母+数字+{_-}
@@ -184,7 +184,7 @@ function display() {
 /**
  * Descriptions: 忘记密码(嗯 这实际上是个没经过推敲的辣鸡需求 但相对简单 可以作为示例)<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/11/13 18:52
  */
 $('span[name=forgotBtn]').on('click', function () {

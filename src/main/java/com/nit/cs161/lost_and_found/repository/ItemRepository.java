@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Descriptions: 物品持久层<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/6 13:50
  */
 @Repository
@@ -19,7 +19,7 @@ public interface ItemRepository extends JpaRepository<LafItem, Integer>, JpaSpec
     /**
      * Descriptions: 根据物品名称查询<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/6 13:50
      */
     List<LafItem> findAllByItemName(String itemName);

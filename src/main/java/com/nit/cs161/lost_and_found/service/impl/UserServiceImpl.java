@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Descriptions: 用户业务逻辑实现<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/1 15:56
  */
 @Service
@@ -193,7 +193,7 @@ public class  UserServiceImpl implements UserService {
     /**
      * Descriptions: 检查用户是否已被注册<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 16:29
      */
     private EnumIs isUserExist(String userName) {
@@ -206,7 +206,7 @@ public class  UserServiceImpl implements UserService {
     /**
      * Descriptions: 检查传入参数键值对 对应的用户是否已被注册<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/4 20:20
      */
     private EnumIs isUserExist(String fieldName, String fieldValue) {

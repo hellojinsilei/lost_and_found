@@ -16,7 +16,7 @@ public interface ListAble<DTO, Filter> {
      * @param filter 筛选器
      * @return 经筛选后的记录列表
      * @throws Exception 数据库日常
-     * @author SailHe
+     * @author Jin
      * @date 2018/5/22 17:06
      */
     List<DTO> listRecord(Filter filter) throws Exception;

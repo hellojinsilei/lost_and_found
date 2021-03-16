@@ -32,7 +32,7 @@ public class TreeNode<DataType> {
     /**
      * Descriptions: 分支出n个结点 子结点的数据依次为 dataCollection 中的数据<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/17 14:16
      */
     public boolean branchesAllSubNode(Collection<DataType> dataCollection) {
@@ -53,7 +53,7 @@ public class TreeNode<DataType> {
     /**
      * Descriptions: 为每个子结点都建一个分支 数据为传入的List(以少的为准)<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/17 14:45
      */
     public void branchesGrandsonNode(Iterator<DataType> dater) {

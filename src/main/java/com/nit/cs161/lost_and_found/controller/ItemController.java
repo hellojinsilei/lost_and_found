@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 /**
  * Descriptions: 物品路由控制<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/1 15:42
  */
 @RestController
@@ -45,7 +45,7 @@ public class ItemController {
     /**
      * Descriptions: 获取primaryKey对应的那条记录<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 20:44
      */
     @RequestMapping(value = "query")
@@ -65,7 +65,7 @@ public class ItemController {
     /**
      * Descriptions: 删除primaryKey对应的那条记录<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 13:52
      */
     @RequestMapping(value = "delete")
@@ -85,7 +85,7 @@ public class ItemController {
     /**
      * Descriptions: 凭借主键分辨记录 更新该记录的非空内容<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 15:10
      */
     @RequestMapping(value = "update")
@@ -105,7 +105,7 @@ public class ItemController {
     /**
      * Descriptions: 插入新增记录内的所有内容<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 20:44
      */
     @RequestMapping(value = "save")
@@ -125,7 +125,7 @@ public class ItemController {
     /**
      * Descriptions: 插入新增记录内的非空内容<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 20:44
      */
     @RequestMapping(value = "insert")
@@ -145,7 +145,7 @@ public class ItemController {
     /**
      * Descriptions: 物品模糊查询接口<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 21:54
      */
     @RequestMapping(value = "/fuzzyQuery")

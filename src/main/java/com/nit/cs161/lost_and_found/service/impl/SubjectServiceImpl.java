@@ -36,7 +36,7 @@ import java.util.*;
 /**
  * Descriptions: 业务逻辑实现<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/6 13:53
  */
 @Service
@@ -188,7 +188,7 @@ public class SubjectServiceImpl implements SubjectService {
     /**
      * Descriptions: 列举一个物品的消息列表(即主题)<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/12/13 16:35
      */
     private List<MessageDTO> listItemMessage(Integer itemId) {

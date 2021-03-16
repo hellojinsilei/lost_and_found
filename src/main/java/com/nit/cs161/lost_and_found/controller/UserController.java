@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 /**
  * Descriptions: 用户控制<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/1 15:42
  */
 @RestController
@@ -36,7 +36,7 @@ public class UserController {
     /**
      * Descriptions: 登录接口<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 15:42
      */
     @RequestMapping(value = "/signIn")
@@ -64,7 +64,7 @@ public class UserController {
     /**
      * Descriptions: 注册<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 15:46
      */
     @RequestMapping(value = "/signUp")
@@ -83,7 +83,7 @@ public class UserController {
     /**
      * Descriptions: 注册<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 15:46
      */
     @RequestMapping(value = "/signOut")
@@ -102,7 +102,7 @@ public class UserController {
     /**
      * Descriptions: 获取primaryKey对应的那条记录<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 20:44
      */
     @RequestMapping(value = "query")
@@ -122,7 +122,7 @@ public class UserController {
     /**
      * Descriptions: 删除primaryKey对应的那条记录<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 13:52
      */
     @RequestMapping(value = "delete")
@@ -142,7 +142,7 @@ public class UserController {
     /**
      * Descriptions: 凭借主键分辨记录 更新该记录的非空内容<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 15:10
      */
     @RequestMapping(value = "update")
@@ -162,7 +162,7 @@ public class UserController {
     /**
      * Descriptions: 插入新增记录内的所有内容<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 20:44
      */
     @RequestMapping(value = "save")
@@ -182,7 +182,7 @@ public class UserController {
     /**
      * Descriptions: 插入新增记录内的非空内容<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/1/28 20:44
      */
     @RequestMapping(value = "insert")
@@ -217,7 +217,7 @@ public class UserController {
     /**
      * Descriptions: 用户模糊查询接口<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 21:54
      */
     @RequestMapping(value = "/fuzzyQuery")

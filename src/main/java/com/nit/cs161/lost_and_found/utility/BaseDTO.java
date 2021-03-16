@@ -62,7 +62,7 @@ public abstract class BaseDTO<EntityBeanType> implements EntityExistent {
     /**
      * Descriptions: 以下是Demo<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/11 22:28
      */
     private static class DemoBean {

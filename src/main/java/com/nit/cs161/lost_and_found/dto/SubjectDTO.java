@@ -10,7 +10,7 @@ import org.springframework.beans.BeanUtils;
 /**
  * Descriptions: 主题: 消息和物品的复合类<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/6 22:46
  */
 public class SubjectDTO {
@@ -86,7 +86,7 @@ public class SubjectDTO {
     /**
      * Descriptions: 尤其注意 此处为了前端显示直接是类型的name于是更改了返回值<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/7 0:35
      */
     public String getMessageType() {

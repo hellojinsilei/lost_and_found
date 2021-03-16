@@ -14,7 +14,7 @@ public interface EntityExistent {
     /**
      * Descriptions: <p>
      * @return 继承此接口的DTO类型对应的Bean的类型名称对象 即 Bean.class
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/9 12:27
      */
     Class beanClass();
@@ -22,7 +22,7 @@ public interface EntityExistent {
     /**
      * Descriptions: 转换为实体对象<p>
      * @return Bean对象
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/9 17:55
      */
     Object toBean() throws InvocationTargetException, NoSuchMethodException,

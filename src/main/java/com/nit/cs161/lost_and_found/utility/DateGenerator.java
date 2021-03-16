@@ -17,7 +17,7 @@ public class DateGenerator {
     /**
      * Descriptions: default format: HH表示24小时制<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/3 16:52
      */
     private static SimpleDateFormat dateFormatBuffer = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -27,7 +27,7 @@ public class DateGenerator {
     /**
      * Descriptions: 改变该对象的格式(toString输出时自动转换)<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/3 16:42
      */
     public DateGenerator resetFormat(SimpleDateFormat dateFormat) {
@@ -38,7 +38,7 @@ public class DateGenerator {
     /**
      * Descriptions: 这会对之后所有的造成影响 慎用<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/7/27 18:43
      */
     public static void setFormat(SimpleDateFormat dateFormat) {
@@ -86,7 +86,7 @@ public class DateGenerator {
     /**
      * Descriptions: Demo<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/3 16:53
      */
 //    public static void main(String[] args) {

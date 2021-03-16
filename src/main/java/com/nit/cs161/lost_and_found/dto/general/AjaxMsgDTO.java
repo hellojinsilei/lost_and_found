@@ -10,21 +10,21 @@ public class AjaxMsgDTO {
     /**
      * Descriptions: 交互状态<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/10 11:58
      */
     private Boolean success;
     /**
      * Descriptions: json数据<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/10 12:02
      */
     private Object  data;
     /**
      * Descriptions: 交互提示信息详情<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/4/10 12:01
      */
     private String  msg;

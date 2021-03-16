@@ -16,7 +16,7 @@ public class Tools {
     /**
      * Descriptions: 用List.for-each即可<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/8/29 14:56
      */
     public interface CustomTask<BeanType> {
@@ -24,7 +24,7 @@ public class Tools {
          * Descriptions: 自定义任务<p>
          *
          * @param bean 传入的实体
-         * @author SailHe
+         * @author Jin
          * @date 2018/8/29 13:08
          */
         void task(BeanType bean);
@@ -36,7 +36,7 @@ public class Tools {
          *
          * @param bean 传入的实体
          * @return 返回自定义键
-         * @author SailHe
+         * @author Jin
          * @date 2018/8/29 13:26
          */
         Key getKey(Bean bean);
@@ -46,7 +46,7 @@ public class Tools {
      * Descriptions: key映射BeanList, 一对多<p>
      *
      * @TODO 允许重复key的Map
-     * @author SailHe
+     * @author Jin
      * @date 2018/8/29 12:56
      */
     public static <Key, BeanType> void calcKeyMapList(
@@ -68,7 +68,7 @@ public class Tools {
      * 此方法在keyGeter.getKey(bean)与bean.equals()等价的前提下生成的Map与Set等价
      *
      * @throws Exception 参数的List中key重复异常, 映射结果元素个数不相等异常
-     * @author SailHe
+     * @author Jin
      * @date 2018/9/30 12:29
      */
     public static <Key, BeanType> void calcKeyMapBean(
@@ -91,7 +91,7 @@ public class Tools {
      *
      * @param beanList 有且仅有一个元素的列表
      * @return 返回列表中唯一的元素
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/6 13:57
      */
     public static <BeanType> BeanType uniqueList(List<BeanType> beanList) throws Exception {

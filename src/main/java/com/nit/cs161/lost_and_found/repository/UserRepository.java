@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Descriptions: 用户持久层<p>
  *
- * @author SailHe
+ * @author Jin
  * @date 2018/10/1 15:57
  */
 @Repository
@@ -24,7 +24,7 @@ public interface UserRepository extends JpaRepository<SysUser, Integer>, JpaSpec
     /**
      * Descriptions: 根据用户名查询(用户名应当唯一)<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 16:18
      */
     List<SysUser> findAllByUserUsername(String userUserName);
@@ -36,7 +36,7 @@ public interface UserRepository extends JpaRepository<SysUser, Integer>, JpaSpec
     /**
      * Descriptions: 用于模糊查询<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 21:49
      */
     List<SysUser> findAllByUserUsernameLikeOrUserNicknameLikeOrUserRealnameLikeOrUserEmailAddressLike(String userUserName, String userRealName, String userNickName, String userEmail);

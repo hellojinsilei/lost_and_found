@@ -14,7 +14,7 @@ public enum EnumCategoryGrade {
     /**
      * Descriptions: 无效的类别品级<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/7/20 14:51
      */
     public static final int INVALID_GRADE = -1;

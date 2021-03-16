@@ -54,7 +54,7 @@ public class MethodTimeActive implements MethodInterceptor {
     /**
      * Descriptions: 测试方法运行完毕后，取出定义的Map集合，显示数据<p>
      *
-     * @author SailHe
+     * @author Jin
      * @date 2018/5/18 20:42
      */
     public static void statisticsAfterMethod() {

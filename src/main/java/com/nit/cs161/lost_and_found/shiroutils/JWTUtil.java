@@ -98,7 +98,7 @@ public class JWTUtil {
      * Descriptions: 获取token中包涵的用户名(无需secret解密)<p>
      *
      * @return token中包含的用户名
-     * @author SailHe
+     * @author Jin
      * @date 2018/10/1 17:33
      */
     public static String getUsernameInToken(String token) {
