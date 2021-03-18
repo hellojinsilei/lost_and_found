@@ -80,12 +80,13 @@ $(function () {
                         if (ele.messageType != 0) {
                             // $('#currentSubjectInfo').text(ele.messageDesc);
                             // 哈哈 区别出现啦 text 是将其转换为文本了的
-                            $('#currentSubjectInfo').html(`<div style="background-color: aquamarine">${pastPar.publisher} 于 ${pastPar.publishTime} : </div> ${ele.messageDesc}`);
+                            $('#currentSubjectInfo').html(`<div style="background-color: aquamarine;padding: 10px"><h2>失物招领信息</h2>${pastPar.publisher} 于 ${pastPar.publishTime} : </div> <div style="height: 50px;font-size: 20px">${ele.messageDesc}</div>`);
                             currentItemId = $('input[name=itemId]').val(ele.itemId);
                             if (ele.userUsername === username && isNotInited) {
                                 $('.publish-new-msg').after(
                                     // "<span class='clickable option-col msg-opt-del' msgId='" + currentMsgId + "'> 编辑 </span>"
-                                    "<span class='clickable option-col btn-modal-show subject-opt-edit'> 编辑主题 </span>"
+                                    "" +
+                                    ""
                                 );
                             }
                         } else {

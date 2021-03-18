@@ -50,7 +50,7 @@ $(function () {
                 render: (data, type, row) => {
                     // return divWrap('<img src="' + (isValidVar(data) ? data : NO_PIC_URL) + '" style="width: 50%;">');
                     return divWrap(
-                        "<span class='clickable subject'"
+                        "<span class='clickable subject' style='color: #1890FF'"
                         + "messageId='" + parseInt(row.messageId) + "'"
                         + "itemName='" + row.itemName + "'>"
                         + showLimitLenStr(data, 10)
@@ -96,7 +96,7 @@ $(function () {
                     */
                     const isPublisher = row.userUsername === username;
                     const publisherStr = "<span class='clickable option-col subject-opt-del' msgId='" + data + "'> 删除 </span>";
-                    const visitErStr = "";
+                    const visitErStr = "<span class='clickable pre-del-col subject-opt-claim' msgId='" + data + "'> 认领 </span>";
                     return divWrap(
                         isPublisher ? publisherStr : visitErStr,
                         isPublisher ? "option-col" : "pre-del-col"
@@ -148,6 +148,28 @@ $(function () {
                     $DataTableAPI
                     , "/subject/delete"
                     , "</br>  PS: 只能删除主题以及对应物品 无法直接删除别人的回复")(msgId);
+                /*$.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        primaryKey: msgId
+                    },
+                    url: "/subject/delete",
+                    success: callbackClosure((data) => {
+                        $.messageBox("删除成功!" + data);
+                        $DataTableAPI.ajax.reload();
+                    }, (data) => {
+                        $.messageBox("删除失败!");
+                    }),
+                });*/
+            });
+            $('.subject-opt-claim').on('click', function () {
+                const $currentNode = $(this);
+                const msgId = $currentNode.attr("msgId");
+                deleteRowClosure(
+                    $DataTableAPI
+                    , "/subject/delete"
+                    , "</br>  PS: 认领后消息将会发送给拾物者，请与拾物者联系")(msgId);
                 /*$.ajax({
                     type: 'post',
                     dataType: 'json',
