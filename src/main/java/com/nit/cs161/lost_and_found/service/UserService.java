@@ -3,6 +3,7 @@ package com.nit.cs161.lost_and_found.service;
 import com.nit.cs161.lost_and_found.dto.UserDTO;
 import com.nit.cs161.lost_and_found.service.general.CrudService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ public interface UserService extends CrudService<UserDTO, Integer> {
      * @author Jin
      * @date 2018/10/1 17:14
      */
-    String signInSystem(UserDTO unSignedUserDTO) throws Exception;
+    String signInSystem(UserDTO unSignedUserDTO, HttpServletRequest httpServletRequest) throws Exception;
 
     /**
      * Descriptions: 用户注册<p>

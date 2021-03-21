@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 
 /**
@@ -40,13 +41,13 @@ public class UserController {
      * @date 2018/10/1 15:42
      */
     @RequestMapping(value = "/signIn")
-    public AjaxMsgDTO signInSystem(String userUsername, String userPassword) {
+    public AjaxMsgDTO signInSystem(String userUsername, String userPassword, HttpServletRequest request) {
         AjaxMsgDTO ajaxMsgDto = new AjaxMsgDTO();
         try {
             UserDTO unSignedUserDTO = new UserDTO();
             unSignedUserDTO.setUserUsername(userUsername);
             unSignedUserDTO.setUserPassword(userPassword);
-            ajaxMsgDto.setMsg(userService.signInSystem(unSignedUserDTO));
+            ajaxMsgDto.setMsg(userService.signInSystem(unSignedUserDTO, request));
             if (unSignedUserDTO.getUserToken() != null) {
                 ajaxMsgDto.setData(userService.getTokenRecord(unSignedUserDTO.getUserToken()));
                 ajaxMsgDto.setSuccess(ProjectConstants.SUCCESS);

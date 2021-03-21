@@ -2,7 +2,6 @@ package com.nit.cs161.lost_and_found.service;
 
 import com.nit.cs161.lost_and_found.dto.ItemDTO;
 import com.nit.cs161.lost_and_found.dto.MessageDTO;
-import com.nit.cs161.lost_and_found.dto.UserDTO;
 import com.nit.cs161.lost_and_found.service.general.PageService;
 
 import java.util.List;
@@ -71,6 +70,15 @@ public interface SubjectService extends PageService<MessageDTO, Integer> {
      * @date 2019/1/6 10:44
      */
     Integer updateRecord(MessageDTO record, ItemDTO itemRecord) throws Exception;
+
+    /**
+     * Descriptions: 认领物品<p>
+     *
+     * @author Jin
+     * @date 2019/1/6 10:44
+     * @param primaryKey
+     */
+    Integer claimItem(Integer primaryKey) throws Exception;
 
 }
 

@@ -646,6 +646,46 @@ deleteRowClosure = function (dataTableApi, deleteUrl, customTips = "") {
     }
 };
 
+
+/**
+ * Descriptions: DataTable的删除行请求闭包生成函数 delete接口参数名必须叫做primaryKey<p>
+ * @param dataTableApi deleteUrl
+ * @author Jin
+ * @date 2018/5/8 19:26
+ */
+claimClosure = function (dataTableApi, claimUrl, customTips = "") {
+    return function (primaryKey) {
+        //确认框
+        bootbox.confirm({
+            buttons: {
+                confirm: {
+                    label: '确认',
+                    className: 'btn-info'
+                },
+                cancel: {
+                    label: '取消',
+                    className: 'btn-default'
+                }
+            },
+            title: '提示',
+            message: '确定认领么？' + customTips,
+            callback: function (result) {
+                if (result) {
+                    $.ajax({
+                        type: "post",
+                        data: {
+                            primaryKey: primaryKey,
+                        },
+                        dataType: "json",
+                        url: claimUrl,
+                        success: tipsCallbackClosure(dataTableApi, '认领'),
+                    });
+                }
+            }
+        });
+    }
+};
+
 /**
  * Descriptions: 返回对象的原型名(prototype, 不是数据的类型: typeof)<p>
  *

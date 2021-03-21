@@ -11,11 +11,17 @@ import com.nit.cs161.lost_and_found.utility.SecureHashStandard;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
 import javax.persistence.criteria.Predicate;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Descriptions: 用户业务逻辑实现<p>
@@ -127,7 +133,7 @@ public class  UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public String signInSystem(UserDTO unSignedUserDTO) throws Exception {
+    public String signInSystem(UserDTO unSignedUserDTO ,HttpServletRequest httpServletRequest) throws Exception {
         String result;
         SysUser userBean = null;
         if (unSignedUserDTO.getUserUsername() != null) {
@@ -149,6 +155,8 @@ public class  UserServiceImpl implements UserService {
                 token = JWTUtil.signature(userUsername, unSignedUserDTO.getUserPassword());
                 userBean.setUserToken(token + userUsername);
                 unSignedUserDTO.setUserToken(token);
+                HttpSession session = httpServletRequest.getSession();
+                session.setAttribute("userName", userUsername);
                 result = "登录成功!";
             } else {
                 result = "密码错误!";

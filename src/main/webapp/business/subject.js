@@ -95,12 +95,24 @@ $(function () {
                     userNickname:"昵称"
                     */
                     const isPublisher = row.userUsername === username;
+                    const isLost = row.messageType === "丢失物品"
                     const publisherStr = "<span class='clickable option-col subject-opt-del' msgId='" + data + "'> 删除 </span>";
                     const visitErStr = "<span class='clickable pre-del-col subject-opt-claim' msgId='" + data + "'> 认领 </span>";
-                    return divWrap(
-                        isPublisher ? publisherStr : visitErStr,
-                        isPublisher ? "option-col" : "pre-del-col"
-                    );
+                    const hasFound = "<span class='clickable pre-fou-col subject-opt-lost' msgId='" + data + "'> 联系他 </span>";
+                    if (isPublisher && isLost) {
+                        console.log("111111")
+                        return divWrap(
+                            hasFound,
+                             "pre-fou-col"
+                        );
+                    }
+                    else {
+                        return divWrap(
+                            isPublisher ? publisherStr : visitErStr,
+                            isPublisher ? "option-col" : "pre-del-col"
+                        );
+                    }
+
                 }
             }
         ],
@@ -166,24 +178,40 @@ $(function () {
             $('.subject-opt-claim').on('click', function () {
                 const $currentNode = $(this);
                 const msgId = $currentNode.attr("msgId");
-                deleteRowClosure(
-                    $DataTableAPI
-                    , "/subject/delete"
-                    , "</br>  PS: 认领后消息将会发送给拾物者，请与拾物者联系")(msgId);
-                /*$.ajax({
-                    type: 'post',
-                    dataType: 'json',
-                    data: {
-                        primaryKey: msgId
+                const customTips = "</br> PS: 认领后消息将会发送给拾物者，请与拾物者联系"
+                bootbox.confirm({
+                    buttons: {
+                        confirm: {
+                            label: '确认',
+                            className: 'btn-info'
+                        },
+                        cancel: {
+                            label: '取消',
+                            className: 'btn-default'
+                        }
                     },
-                    url: "/subject/delete",
-                    success: callbackClosure((data) => {
-                        $.messageBox("删除成功!" + data);
-                        $DataTableAPI.ajax.reload();
-                    }, (data) => {
-                        $.messageBox("删除失败!");
-                    }),
-                });*/
+                    title: '提示',
+                    message: '确定认领么？' + customTips,
+                    callback: function (result) {
+                        if (result) {
+                            $.ajax({
+                                type: 'post',
+                                dataType: 'json',
+                                data: {
+                                    primaryKey: msgId
+                                },
+                                url: "/subject/claim",
+                                success: callbackClosure((data) => {
+                                    $.messageBox("认领成功!" + data);
+                                    $DataTableAPI.ajax.reload();
+                                }, (data) => {
+                                    $.messageBox("认领失败!");
+                                }),
+                            });
+                        }
+                    }
+                });
+
             });
         },
         // dom: "<'row'<'col-md-5'B>r>t<'row'<'col-md-5'l><'col-md-3'i><'col-md-4'p>>",

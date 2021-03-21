@@ -117,11 +117,13 @@ $(function () {
 
                     // 这里是要求对两个模态框的消息类型做订制: 发布消息只能有普通消息类型, 编辑主题有除了普通消息外的类型
                     $('.btn-modal-show').on('click', function () {
+
                         $dataTableForm.resetFormValidCheck();
                         const $currentNode = $(this);
                         const $messageType = $('select[name=messageType]');
                         const optionList = $messageType.find('option');
                         let hasNotSelected = true;
+
                         // 判断是 发布消息 还是 编辑主题
                         if ($currentNode.text().indexOf("编辑") < 0) {
                             // 发布消息
@@ -130,7 +132,7 @@ $(function () {
                                 const currentOp = optionList[i];
                                 if (currentOp.value.toString() === NORMAL_MESSAGE_VALUE) {
                                     $(currentOp).domDisplaySubValid();
-                                    if (hasNotSelected) {
+                                    if (hasNotSelected) {l
                                         currentOp.selected = true;
                                         $(currentOp).trigger('change');
                                         hasNotSelected = false;

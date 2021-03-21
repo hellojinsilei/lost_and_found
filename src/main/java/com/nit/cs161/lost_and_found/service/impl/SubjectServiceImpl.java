@@ -1,6 +1,5 @@
 package com.nit.cs161.lost_and_found.service.impl;
 
-import com.alibaba.fastjson.JSON;
 import com.nit.cs161.lost_and_found.constant.EnumMessageType;
 import com.nit.cs161.lost_and_found.dto.ItemDTO;
 import com.nit.cs161.lost_and_found.dto.MessageDTO;
@@ -11,8 +10,10 @@ import com.nit.cs161.lost_and_found.dto.general.DtResponseDTO;
 import com.nit.cs161.lost_and_found.entity.SysUser;
 import com.nit.cs161.lost_and_found.entity.laf.LafItem;
 import com.nit.cs161.lost_and_found.entity.laf.LafMessage;
+import com.nit.cs161.lost_and_found.entity.laf.LafReturnLog;
 import com.nit.cs161.lost_and_found.repository.ItemRepository;
 import com.nit.cs161.lost_and_found.repository.MessageRepository;
+import com.nit.cs161.lost_and_found.repository.ReturnLogRepository;
 import com.nit.cs161.lost_and_found.repository.UserRepository;
 import com.nit.cs161.lost_and_found.service.SubjectService;
 import com.nit.cs161.lost_and_found.service.UserService;
@@ -26,10 +27,13 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
 import javax.persistence.criteria.Predicate;
-import javax.tools.Tool;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.*;
 
@@ -50,6 +54,9 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Resource
     private UserRepository userRepository;
+
+    @Resource
+    private ReturnLogRepository returnLogRepository;
 
     @Resource
     private UserService userService;
@@ -253,6 +260,33 @@ public class SubjectServiceImpl implements SubjectService {
         itemRecord.setEditTime(new Timestamp(System.currentTimeMillis()));
         saveRecord(record, itemRecord);
         return 2;
+    }
+
+    @Override
+    public Integer claimItem(Integer primaryKey) throws Exception {
+        HttpServletRequest httpServletRequest = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        HttpSession session = httpServletRequest.getSession();
+        String userName = (String) session.getAttribute("userName");
+        List<SysUser> allByUserUsername = userRepository.findAllByUserUsername(userName);
+        LafMessage message = messageRepository.findOne(primaryKey);
+        LafItem item = itemRepository.findOne(message.getItemId());
+        LafReturnLog lafReturnLog = new LafReturnLog();
+        lafReturnLog.setItemId(item.getItemId());
+        lafReturnLog.setPikerUserId(message.getUserId());
+        lafReturnLog.setOwnerUserId(allByUserUsername.get(0).getUserId());
+        lafReturnLog.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        lafReturnLog.setEditTime(new Timestamp(System.currentTimeMillis()));
+        LafReturnLog save = returnLogRepository.save(lafReturnLog);
+        // 组装消息
+        LafMessage lafMessage = new LafMessage();
+        lafMessage.setCreateTime(new Timestamp(System.currentTimeMillis()));
+        lafMessage.setEditTime(new Timestamp(System.currentTimeMillis()));
+        lafMessage.setMessageDesc("想要认领物品o(╥﹏╥)o");
+        lafMessage.setItemId(item.getItemId());
+        lafMessage.setMessageType((byte) 0);
+        lafMessage.setUserId(allByUserUsername.get(0).getUserId());
+        messageRepository.save(lafMessage);
+        return save.getReturnId();
     }
 
     @Override

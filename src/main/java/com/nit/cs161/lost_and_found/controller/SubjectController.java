@@ -97,7 +97,7 @@ public class SubjectController {
             msgDTO.setSuccess(ProjectConstants.SUCCESS);
         } catch (Exception e) {
             msgDTO.setSuccess(ProjectConstants.FAILURE);
-            LOGGER.error("更新主题失败", e);
+            LOGGER.error("认领物品失败", e);
         }
         return msgDTO;
     }
@@ -120,6 +120,26 @@ public class SubjectController {
             LOGGER.error("保存主题失败", e);
         }
         return jsonMsgDTO;
+    }
+
+    /**
+     * Descriptions: 插入新增记录内的所有内容<p>
+     *
+     * @author Jin
+     * @date 2018/1/28 20:44
+     */
+    @RequestMapping(value = "claim")
+    @ResponseBody
+    public AjaxMsgDTO claimSubject(Integer primaryKey) {
+        AjaxMsgDTO msgDTO = new AjaxMsgDTO();
+        try {
+            msgDTO.setData(subjectService.claimItem(primaryKey));
+            msgDTO.setSuccess(ProjectConstants.SUCCESS);
+        } catch (Exception e) {
+            msgDTO.setSuccess(ProjectConstants.FAILURE);
+            LOGGER.error("获取主题失败", e);
+        }
+        return msgDTO;
     }
 
     /**
